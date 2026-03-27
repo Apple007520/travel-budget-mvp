@@ -1,0 +1,949 @@
+
+> travelbudget@0.1.0 dev
+> next dev --hostname 0.0.0.0 --port 3015 --hostname 0.0.0.0 --port 3015
+
+▲ Next.js 16.2.1 (Turbopack)
+- Local:         http://localhost:3015
+- Network:       http://0.0.0.0:3015
+✓ Ready in 537ms
+Attention: Next.js now collects completely anonymous telemetry regarding usage.
+This information is used to shape Next.js' roadmap and prioritize features.
+You can learn more, including how to opt-out if you'd not like to participate in this anonymous program, by visiting the following URL:
+https://nextjs.org/telemetry
+
+
+ GET / 200 in 514ms (next.js: 264ms, application-code: 251ms)
+[browser] Uncaught Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head headCacheNode={{rsc:{...}, ...}}>
+                    <__next_viewport_boundary__>
+                    <MetadataWrapper>
+                      <div
++                       hidden={true}
+-                       hidden={null}
+-                       id="minidam-root"
+-                       className="theme-light"
+                      >
+                        <__next_metadata_boundary__>
++                         <Suspense name="Next.Metadata">
+-                         <div className="minidam_relative">
+                  ...
+
+    at <unknown> (https://react.dev/link/hydration-mismatch)
+    at Suspense (<anonymous>)
+ GET / 200 in 74ms (next.js: 10ms, application-code: 64ms)
+[browser] Uncaught Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head headCacheNode={{rsc:{...}, ...}}>
+                    <__next_viewport_boundary__>
+                    <MetadataWrapper>
+                      <div
++                       hidden={true}
+-                       hidden={null}
+-                       id="minidam-root"
+-                       className="theme-light"
+                      >
+                        <__next_metadata_boundary__>
++                         <Suspense name="Next.Metadata">
+-                         <div className="minidam_relative">
+                  ...
+
+    at <unknown> (https://react.dev/link/hydration-mismatch)
+    at Suspense (<anonymous>)
+✓ Compiled in 287ms
+✓ Compiled in 105ms
+✓ Compiled in 77ms
+ GET / 200 in 143ms (next.js: 108ms, application-code: 34ms)
+ GET / 200 in 58ms (next.js: 6ms, application-code: 51ms)
+ GET / 200 in 103ms (next.js: 15ms, application-code: 88ms)
+[browser] Uncaught Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head headCacheNode={{rsc:{...}, ...}}>
+                    <__next_viewport_boundary__>
+                    <MetadataWrapper>
+                      <div
++                       hidden={true}
+-                       hidden={null}
+-                       id="minidam-root"
+-                       className="theme-light"
+                      >
+                        <__next_metadata_boundary__>
++                         <Suspense name="Next.Metadata">
+-                         <div className="minidam_relative">
+                  ...
+
+    at <unknown> (https://react.dev/link/hydration-mismatch)
+    at Suspense (<anonymous>)
+✓ Compiled in 187ms
+✓ Compiled in 52ms
+ GET / 200 in 137ms (next.js: 102ms, application-code: 35ms)
+✓ Compiled in 146ms
+✓ Compiled in 43ms
+ GET / 200 in 113ms (next.js: 7ms, application-code: 105ms)
+[browser] Uncaught Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head headCacheNode={{rsc:{...}, ...}}>
+                    <__next_viewport_boundary__>
+                    <MetadataWrapper>
+                      <div
++                       hidden={true}
+-                       hidden={null}
+-                       id="minidam-root"
+-                       className="theme-light"
+                      >
+                        <__next_metadata_boundary__>
++                         <Suspense name="Next.Metadata">
+-                         <div className="minidam_relative">
+                  ...
+
+    at <unknown> (https://react.dev/link/hydration-mismatch)
+    at Suspense (<anonymous>)
+✓ Compiled in 59ms
+✓ Compiled in 83ms
+✓ Compiled in 54ms
+✓ Compiled in 31ms
+✓ Compiled in 49ms
+✓ Compiled in 28ms
+✓ Compiled in 26ms
+ GET / 200 in 70ms (next.js: 7ms, application-code: 63ms)
+[browser] Uncaught Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head headCacheNode={{rsc:{...}, ...}}>
+                    <__next_viewport_boundary__>
+                    <MetadataWrapper>
+                      <div
++                       hidden={true}
+-                       hidden={null}
+-                       id="minidam-root"
+-                       className="theme-light"
+                      >
+                        <__next_metadata_boundary__>
++                         <Suspense name="Next.Metadata">
+-                         <div className="minidam_relative">
+                  ...
+
+    at <unknown> (https://react.dev/link/hydration-mismatch)
+    at Suspense (<anonymous>)
+✓ Compiled in 71ms
+✓ Compiled in 29ms
+✓ Compiled in 37ms
+⨯ ./src/components/TravelBudgetPlanner.tsx:804:16
+Expected '</', got '}'
+  [90m802 |[0m                   ))}
+  [90m803 |[0m                 </ul>
+[31m[1m>[0m [90m804 |[0m               )}
+  [90m    |[0m                [31m[1m^[0m
+  [90m805 |[0m
+  [90m806 |[0m               <div className=[32m"mt-4 space-y-2 border-t border-zinc-100 pt-4 dark:border-zi...[0m
+  [90m807 |[0m                 <p className=[32m"text-xs font-medium text-zinc-500 dark:text-zinc-400"[0m>
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./src/components/TravelBudgetPlanner.tsx
+    ./src/app/page.tsx
+
+
+✓ Compiled in 156ms
+[browser] ./src/components/TravelBudgetPlanner.tsx:804:16
+Expected '</', got '}'
+  802 |                   ))}
+  803 |                 </ul>
+> 804 |               )}
+      |                ^
+  805 |
+  806 |               <div className="mt-4 space-y-2 border-t border-zinc-100 pt-4 dark:border-zi...
+  807 |                 <p className="text-xs font-medium text-zinc-500 dark:text-zinc-400">
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./src/components/TravelBudgetPlanner.tsx
+    ./src/app/page.tsx 
+✓ Compiled in 958ms
+ GET / 500 in 1775ms (next.js: 1556ms, application-code: 220ms)
+ GET / 200 in 60ms (next.js: 20ms, application-code: 40ms)
+ GET / 200 in 386ms (next.js: 146ms, application-code: 240ms)
+ GET / 200 in 212ms (next.js: 9ms, application-code: 203ms)
+[browser] Uncaught Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head headCacheNode={{rsc:{...}, ...}}>
+                    <__next_viewport_boundary__>
+                    <MetadataWrapper>
+                      <div
++                       hidden={true}
+-                       hidden={null}
+-                       id="minidam-root"
+-                       className="theme-light"
+                      >
+                        <__next_metadata_boundary__>
++                         <Suspense name="Next.Metadata">
+-                         <div className="minidam_relative">
+                  ...
+
+    at <unknown> (https://react.dev/link/hydration-mismatch)
+    at Suspense (<anonymous>)
+✓ Compiled in 56ms
+✓ Compiled in 26ms
+✓ Compiled in 62ms
+✓ Compiled in 38ms
+✓ Compiled in 296ms
+ GET / 200 in 292ms (next.js: 184ms, application-code: 108ms)
+ GET / 200 in 118ms (next.js: 4ms, application-code: 113ms)
+ GET / 200 in 85ms (next.js: 24ms, application-code: 61ms)
+✓ Compiled in 52ms
+✓ Compiled in 349ms
+ GET / 200 in 265ms (next.js: 120ms, application-code: 144ms)
+ GET / 200 in 103ms (next.js: 4ms, application-code: 99ms)
+ GET / 200 in 64ms (next.js: 8ms, application-code: 56ms)
+✓ Compiled in 24ms
+✓ Compiled in 39ms
+✓ Compiled in 184ms
+✓ Compiled in 33ms
+✓ Compiled in 22ms
+✓ Compiled in 52ms
+✓ Compiled in 33ms
+✓ Compiled in 24ms
+✓ Compiled in 30ms
+✓ Compiled in 51ms
+✓ Compiled in 53ms
+✓ Compiled in 44ms
+✓ Compiled in 72ms
+[browser] "⨯ unhandledRejection:" [object Event] 
+
+✓ Compiled in 55ms
+✓ Compiled in 191ms
+[browser] "⨯ unhandledRejection:" [object Event] 
+
+[browser] "⨯ unhandledRejection:" [object Event] 
+
+✓ Compiled in 28ms
+✓ Compiled in 28ms
+✓ Compiled in 24ms
+✓ Compiled in 21ms
+✓ Compiled in 18ms
+✓ Compiled in 33ms
+ GET / 200 in 188ms (next.js: 7ms, application-code: 181ms)
+[browser] Uncaught Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head headCacheNode={{rsc:{...}, ...}}>
+                    <__next_viewport_boundary__>
+                    <MetadataWrapper>
+                      <div
++                       hidden={true}
+-                       hidden={null}
+-                       id="minidam-root"
+-                       className="theme-light"
+                      >
+                        <__next_metadata_boundary__>
++                         <Suspense name="Next.Metadata">
+-                         <div className="minidam_relative">
+                  ...
+
+    at <unknown> (https://react.dev/link/hydration-mismatch)
+    at Suspense (<anonymous>)
+✓ Compiled in 21ms
+✓ Compiled in 60ms
+✓ Compiled in 31ms
+✓ Compiled in 25ms
+✓ Compiled in 20ms
+ GET / 200 in 68ms (next.js: 11ms, application-code: 57ms)
+✓ Compiled in 60ms
+✓ Compiled in 71ms
+✓ Compiled in 80ms
+✓ Compiled in 78ms
+✓ Compiled in 38ms
+✓ Compiled in 141ms
+✓ Compiled in 21ms
+✓ Compiled in 23ms
+✓ Compiled in 42ms
+✓ Compiled in 31ms
+✓ Compiled in 27ms
+✓ Compiled in 43ms
+✓ Compiled in 23ms
+ GET / 200 in 64ms (next.js: 5ms, application-code: 58ms)
+[browser] Uncaught Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head headCacheNode={{rsc:{...}, ...}}>
+                    <__next_viewport_boundary__>
+                    <MetadataWrapper>
+                      <div
++                       hidden={true}
+-                       hidden={null}
+-                       id="minidam-root"
+-                       className="theme-light"
+                      >
+                        <__next_metadata_boundary__>
++                         <Suspense name="Next.Metadata">
+-                         <div className="minidam_relative">
+                  ...
+
+    at <unknown> (https://react.dev/link/hydration-mismatch)
+    at Suspense (<anonymous>)
+✓ Compiled in 49ms
+✓ Compiled in 64ms
+✓ Compiled in 38ms
+✓ Compiled in 31ms
+✓ Compiled in 30ms
+✓ Compiled in 37ms
+✓ Compiled in 28ms
+✓ Compiled in 60ms
+[browser] Uncaught ReferenceError: CITY_NAMES is not defined
+    at TravelBudgetPlanner (src/components/TravelBudgetPlanner.tsx:727:16)
+    at Set.forEach (<anonymous>)
+    at Home (src/app/page.tsx:4:10)
+  725 |             </div>
+  726 |             <datalist id="travel-city-options">
+> 727 |               {CITY_NAMES.map((c) => (
+      |                ^
+  728 |                 <option key={c} value={c} />
+  729 |               ))}
+  730 |             </datalist>
+⚠ Fast Refresh had to perform a full reload due to a runtime error.
+✓ Compiled in 70ms
+⨯ ReferenceError: CITY_NAMES is not defined
+    at TravelBudgetPlanner (src/components/TravelBudgetPlanner.tsx:730:16)
+  728 |             </div>
+  729 |             <datalist id="travel-city-options">
+> 730 |               {CITY_NAMES.map((c) => (
+      |                ^
+  731 |                 <option key={c} value={c} />
+  732 |               ))}
+  733 |             </datalist> {
+  digest: '3833772047'
+}
+[browser] Uncaught ReferenceError: CITY_NAMES is not defined
+    at TravelBudgetPlanner (src/components/TravelBudgetPlanner.tsx:730:16)
+    at Set.forEach (<anonymous>)
+    at Home (src/app/page.tsx:4:10)
+  728 |             </div>
+  729 |             <datalist id="travel-city-options">
+> 730 |               {CITY_NAMES.map((c) => (
+      |                ^
+  731 |                 <option key={c} value={c} />
+  732 |               ))}
+  733 |             </datalist>
+ GET / 500 in 262ms (next.js: 19ms, application-code: 242ms)
+[browser] Uncaught ReferenceError: CITY_NAMES is not defined
+    at TravelBudgetPlanner (src/components/TravelBudgetPlanner.tsx:730:16)
+    at Home (src/app/page.tsx:4:10)
+  728 |             </div>
+  729 |             <datalist id="travel-city-options">
+> 730 |               {CITY_NAMES.map((c) => (
+      |                ^
+  731 |                 <option key={c} value={c} />
+  732 |               ))}
+  733 |             </datalist>
+✓ Compiled in 80ms
+⚠ Fast Refresh had to perform a full reload due to a runtime error.
+⨯ ReferenceError: CITY_NAMES is not defined
+    at TravelBudgetPlanner (src/components/TravelBudgetPlanner.tsx:731:16)
+  729 |             </div>
+  730 |             <datalist id="travel-city-options">
+> 731 |               {CITY_NAMES.map((c) => (
+      |                ^
+  732 |                 <option key={c} value={c} />
+  733 |               ))}
+  734 |             </datalist> {
+  digest: '3833772047'
+}
+ GET / 500 in 122ms (next.js: 14ms, application-code: 108ms)
+[browser] Uncaught ReferenceError: CITY_NAMES is not defined
+    at TravelBudgetPlanner (src/components/TravelBudgetPlanner.tsx:731:16)
+    at Home (src/app/page.tsx:4:10)
+  729 |             </div>
+  730 |             <datalist id="travel-city-options">
+> 731 |               {CITY_NAMES.map((c) => (
+      |                ^
+  732 |                 <option key={c} value={c} />
+  733 |               ))}
+  734 |             </datalist>
+✓ Compiled in 133ms
+⚠ Fast Refresh had to perform a full reload due to a runtime error.
+⨯ ReferenceError: CITY_NAMES is not defined
+    at TravelBudgetPlanner (src/components/TravelBudgetPlanner.tsx:749:16)
+  747 |             </div>
+  748 |             <datalist id="travel-city-options">
+> 749 |               {CITY_NAMES.map((c) => (
+      |                ^
+  750 |                 <option key={c} value={c} />
+  751 |               ))}
+  752 |             </datalist> {
+  digest: '3008770832'
+}
+ GET / 500 in 485ms (next.js: 215ms, application-code: 270ms)
+[browser] Uncaught ReferenceError: CITY_NAMES is not defined
+    at TravelBudgetPlanner (src/components/TravelBudgetPlanner.tsx:749:16)
+    at Home (src/app/page.tsx:4:10)
+  747 |             </div>
+  748 |             <datalist id="travel-city-options">
+> 749 |               {CITY_NAMES.map((c) => (
+      |                ^
+  750 |                 <option key={c} value={c} />
+  751 |               ))}
+  752 |             </datalist>
+✓ Compiled in 95ms
+⚠ Fast Refresh had to perform a full reload due to a runtime error.
+⨯ ReferenceError: CITY_NAMES is not defined
+    at TravelBudgetPlanner (src/components/TravelBudgetPlanner.tsx:750:16)
+  748 |             </div>
+  749 |             <datalist id="travel-city-options">
+> 750 |               {CITY_NAMES.map((c) => (
+      |                ^
+  751 |                 <option key={c} value={c} />
+  752 |               ))}
+  753 |             </datalist> {
+  digest: '3827177021'
+}
+ GET / 500 in 152ms (next.js: 13ms, application-code: 139ms)
+[browser] Uncaught ReferenceError: CITY_NAMES is not defined
+    at TravelBudgetPlanner (src/components/TravelBudgetPlanner.tsx:750:16)
+    at Home (src/app/page.tsx:4:10)
+  748 |             </div>
+  749 |             <datalist id="travel-city-options">
+> 750 |               {CITY_NAMES.map((c) => (
+      |                ^
+  751 |                 <option key={c} value={c} />
+  752 |               ))}
+  753 |             </datalist>
+⚠ Fast Refresh had to perform a full reload due to a runtime error.
+✓ Compiled in 39ms
+⨯ ReferenceError: CITY_NAMES is not defined
+    at TravelBudgetPlanner (src/components/TravelBudgetPlanner.tsx:751:16)
+  749 |             </div>
+  750 |             <datalist id="travel-city-options">
+> 751 |               {CITY_NAMES.map((c) => (
+      |                ^
+  752 |                 <option key={c} value={c} />
+  753 |               ))}
+  754 |             </datalist> {
+  digest: '3827177021'
+}
+ GET / 500 in 239ms (next.js: 5ms, application-code: 234ms)
+[browser] Uncaught ReferenceError: CITY_NAMES is not defined
+    at TravelBudgetPlanner (src/components/TravelBudgetPlanner.tsx:751:16)
+    at Home (src/app/page.tsx:4:10)
+  749 |             </div>
+  750 |             <datalist id="travel-city-options">
+> 751 |               {CITY_NAMES.map((c) => (
+      |                ^
+  752 |                 <option key={c} value={c} />
+  753 |               ))}
+  754 |             </datalist>
+✓ Compiled in 96ms
+⚠ Fast Refresh had to perform a full reload due to a runtime error.
+⨯ ReferenceError: CITY_NAMES is not defined
+    at TravelBudgetPlanner (src/components/TravelBudgetPlanner.tsx:752:16)
+  750 |             </div>
+  751 |             <datalist id="travel-city-options">
+> 752 |               {CITY_NAMES.map((c) => (
+      |                ^
+  753 |                 <option key={c} value={c} />
+  754 |               ))}
+  755 |             </datalist> {
+  digest: '3827177021'
+}
+ GET / 500 in 156ms (next.js: 12ms, application-code: 144ms)
+[browser] Uncaught ReferenceError: CITY_NAMES is not defined
+    at TravelBudgetPlanner (src/components/TravelBudgetPlanner.tsx:751:16)
+    at Home (src/app/page.tsx:4:10)
+  749 |             </div>
+  750 |             <datalist id="travel-city-options">
+> 751 |               {CITY_NAMES.map((c) => (
+      |                ^
+  752 |                 <option key={c} value={c} />
+  753 |               ))}
+  754 |             </datalist>
+⚠ Fast Refresh had to perform a full reload due to a runtime error.
+✓ Compiled in 81ms
+ GET / 200 in 130ms (next.js: 8ms, application-code: 122ms)
+[browser] Uncaught Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head headCacheNode={{rsc:{...}, ...}}>
+                    <__next_viewport_boundary__>
+                    <MetadataWrapper>
+                      <div
++                       hidden={true}
+-                       hidden={null}
+-                       id="minidam-root"
+-                       className="theme-light"
+                      >
+                        <__next_metadata_boundary__>
++                         <Suspense name="Next.Metadata">
+-                         <div className="minidam_relative">
+                  ...
+
+    at <unknown> (https://react.dev/link/hydration-mismatch)
+    at Suspense (<anonymous>)
+✓ Compiled in 81ms
+✓ Compiled in 50ms
+✓ Compiled in 24ms
+✓ Compiled in 29ms
+✓ Compiled in 34ms
+✓ Compiled in 107ms
+✓ Compiled in 24ms
+✓ Compiled in 24ms
+✓ Compiled in 29ms
+✓ Compiled in 29ms
+✓ Compiled in 42ms
+ GET / 200 in 127ms (next.js: 14ms, application-code: 113ms)
+[browser] Uncaught Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head headCacheNode={{rsc:{...}, ...}}>
+                    <__next_viewport_boundary__>
+                    <MetadataWrapper>
+                      <div
++                       hidden={true}
+-                       hidden={null}
+-                       id="minidam-root"
+-                       className="theme-light"
+                      >
+                        <__next_metadata_boundary__>
++                         <Suspense name="Next.Metadata">
+-                         <div className="minidam_relative">
+                  ...
+
+    at <unknown> (https://react.dev/link/hydration-mismatch)
+    at Suspense (<anonymous>)
+✓ Compiled in 57ms
+✓ Compiled in 59ms
+✓ Compiled in 28ms
+✓ Compiled in 24ms
+✓ Compiled in 49ms
+✓ Compiled in 53ms
+✓ Compiled in 81ms
+✓ Compiled in 56ms
+✓ Compiled in 50ms
+✓ Compiled in 80ms
+✓ Compiled in 29ms
+✓ Compiled in 26ms
+✓ Compiled in 32ms
+✓ Compiled in 36ms
+ GET / 200 in 72ms (next.js: 8ms, application-code: 64ms)
+[browser] Uncaught Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head headCacheNode={{rsc:{...}, ...}}>
+                    <__next_viewport_boundary__>
+                    <MetadataWrapper>
+                      <div
++                       hidden={true}
+-                       hidden={null}
+-                       id="minidam-root"
+-                       className="theme-light"
+                      >
+                        <__next_metadata_boundary__>
++                         <Suspense name="Next.Metadata">
+-                         <div className="minidam_relative">
+                  ...
+
+    at <unknown> (https://react.dev/link/hydration-mismatch)
+    at Suspense (<anonymous>)
+✓ Compiled in 42ms
+✓ Compiled in 64ms
+✓ Compiled in 49ms
+✓ Compiled in 36ms
+✓ Compiled in 49ms
+✓ Compiled in 30ms
+✓ Compiled in 25ms
+✓ Compiled in 34ms
+✓ Compiled in 35ms
+✓ Compiled in 55ms
+✓ Compiled in 37ms
+✓ Compiled in 45ms
+✓ Compiled in 27ms
+✓ Compiled in 33ms
+✓ Compiled in 40ms
+✓ Compiled in 36ms
+✓ Compiled in 28ms
+✓ Compiled in 32ms
+✓ Compiled in 39ms
+✓ Compiled in 34ms
+✓ Compiled in 64ms
+✓ Compiled in 31ms
+✓ Compiled in 26ms
+✓ Compiled in 28ms
+✓ Compiled in 105ms
+✓ Compiled in 52ms
+✓ Compiled in 61ms
+✓ Compiled in 34ms
+✓ Compiled in 93ms
+✓ Compiled in 54ms
+✓ Compiled in 68ms
+✓ Compiled in 62ms
+✓ Compiled in 48ms
+✓ Compiled in 67ms
+✓ Compiled in 86ms
+✓ Compiled in 69ms
+✓ Compiled in 45ms
+✓ Compiled in 77ms
+✓ Compiled in 64ms
+✓ Compiled in 43ms
+✓ Compiled in 53ms
+✓ Compiled in 216ms
+✓ Compiled in 31ms
+✓ Compiled in 37ms
+✓ Compiled in 54ms
+✓ Compiled in 34ms
+✓ Compiled in 132ms
+✓ Compiled in 61ms
+✓ Compiled in 47ms
+✓ Compiled in 271ms
+✓ Compiled in 69ms
+✓ Compiled in 171ms
+✓ Compiled in 99ms
+✓ Compiled in 53ms
+✓ Compiled in 41ms
+✓ Compiled in 59ms
+✓ Compiled in 52ms
+✓ Compiled in 36ms
+✓ Compiled in 40ms
+✓ Compiled in 40ms
+[browser] Uncaught ReferenceError: feeLabel is not defined
+    at ListRow (src/components/SharePoster.tsx:353:10)
+    at Set.forEach (<anonymous>)
+    at eval (src/components/SharePoster.tsx:263:27)
+    at Array.map (<anonymous>)
+    at SharePoster (src/components/SharePoster.tsx:263:27)
+    at TravelBudgetPlanner (src/components/TravelBudgetPlanner.tsx:1453:17)
+    at Home (src/app/page.tsx:4:10)
+  351 |         }}
+  352 |       >
+> 353 |         {feeLabel}
+      |          ^
+  354 |       </span>
+  355 |     </div>
+  356 |   );
+⚠ Fast Refresh had to perform a full reload due to a runtime error.
+✓ Compiled in 55ms
+ GET / 200 in 303ms (next.js: 40ms, application-code: 264ms)
+[browser] Uncaught Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head headCacheNode={{rsc:{...}, ...}}>
+                    <__next_viewport_boundary__>
+                    <MetadataWrapper>
+                      <div
++                       hidden={true}
+-                       hidden={null}
+-                       id="minidam-root"
+-                       className="theme-light"
+                      >
+                        <__next_metadata_boundary__>
++                         <Suspense name="Next.Metadata">
+-                         <div className="minidam_relative">
+                  ...
+
+    at <unknown> (https://react.dev/link/hydration-mismatch)
+    at Suspense (<anonymous>)
+✓ Compiled in 49ms
+✓ Compiled in 33ms
+✓ Compiled in 31ms
+✓ Compiled in 40ms
+✓ Compiled in 29ms
+✓ Compiled in 102ms
+✓ Compiled in 45ms
+✓ Compiled in 41ms
+✓ Compiled in 28ms
+✓ Compiled in 64ms
+✓ Compiled in 64ms
+✓ Compiled in 63ms
+✓ Compiled in 27ms
+[browser] Uncaught ReferenceError: PosterIconPhoneScan is not defined
+    at SharePoster (src/components/SharePoster.tsx:618:20)
+    at Set.forEach (<anonymous>)
+    at TravelBudgetPlanner (src/components/TravelBudgetPlanner.tsx:1527:17)
+    at Home (src/app/page.tsx:4:10)
+  616 |               >
+  617 |                 <span style={{ flexShrink: 0, marginTop: 2 }}>
+> 618 |                   <PosterIconPhoneScan />
+      |                    ^
+  619 |                 </span>
+  620 |                 <span>扫码复制我的行程</span>
+  621 |               </p>
+⚠ Fast Refresh had to perform a full reload due to a runtime error.
+✓ Compiled in 31ms
+ GET / 200 in 259ms (next.js: 39ms, application-code: 220ms)
+[browser] Uncaught Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head headCacheNode={{rsc:{...}, ...}}>
+                    <__next_viewport_boundary__>
+                    <MetadataWrapper>
+                      <div
++                       hidden={true}
+-                       hidden={null}
+-                       id="minidam-root"
+-                       className="theme-light"
+                      >
+                        <__next_metadata_boundary__>
++                         <Suspense name="Next.Metadata">
+-                         <div className="minidam_relative">
+                  ...
+
+    at <unknown> (https://react.dev/link/hydration-mismatch)
+    at Suspense (<anonymous>)
+✓ Compiled in 33ms
+✓ Compiled in 28ms
+✓ Compiled in 24ms
+✓ Compiled in 50ms
+✓ Compiled in 49ms
+✓ Compiled in 119ms
+✓ Compiled in 40ms
+✓ Compiled in 32ms
+✓ Compiled in 34ms
+✓ Compiled in 32ms
+✓ Compiled in 72ms
+✓ Compiled in 139ms
+✓ Compiled in 32ms
+✓ Compiled in 32ms
+✓ Compiled in 51ms
+✓ Compiled in 77ms
+✓ Compiled in 45ms
+[?25h
