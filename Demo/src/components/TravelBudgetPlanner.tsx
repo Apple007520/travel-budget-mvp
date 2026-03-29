@@ -1178,6 +1178,19 @@ export function TravelBudgetPlanner() {
                             <p className="mt-1.5 text-xs leading-relaxed text-zinc-400 dark:text-zinc-500">
                               预算按单价 {formatYuan(a.price)}/人 计入 ·{" "}
                               {attractionTicketFootnote(a)}
+                              {a.sourceUrl ? (
+                                <>
+                                  {" · "}
+                                  <a
+                                    href={a.sourceUrl}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="font-medium text-teal-600 underline decoration-teal-600/30 underline-offset-2 hover:decoration-teal-600 dark:text-teal-400"
+                                  >
+                                    核对官方票价
+                                  </a>
+                                </>
+                              ) : null}
                             </p>
                           ) : null}
                         </div>
