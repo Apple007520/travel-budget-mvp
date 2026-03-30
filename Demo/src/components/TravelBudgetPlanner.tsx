@@ -496,13 +496,27 @@ export function TravelBudgetPlanner() {
       return;
     }
 
-    const origin =
-      typeof window !== "undefined" ? window.location.origin.trim() : "";
+    const origin = typeof window !== "undefined" ? window.location.origin.trim() : "";
+    const path = typeof window !== "undefined" ? window.location.pathname.trim() : "";
     const isLocalhost =
       /^https?:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/i.test(origin);
 
+    // GitHub Pages 通常部署在子路径：`https://<user>.github.io/<repo>/`
+    // 例如本项目：`/travel-budget-mvp/`
+    const basePathFromPathname = (() => {
+      if (!path || path === "/") return "";
+      const seg = path.split("/").filter(Boolean)[0];
+      return seg ? `/${seg}` : "";
+    })();
+
+    const isGithubPages = /\.github\.io$/i.test(new URL(origin).hostname);
+
     setSharePosterUrl(
-      origin && !isLocalhost ? origin : DEFAULT_PUBLIC_APP_URL,
+      origin && !isLocalhost
+        ? isGithubPages && basePathFromPathname
+          ? `${origin}${basePathFromPathname}/`
+          : origin
+        : DEFAULT_PUBLIC_APP_URL,
     );
   }, []);
 
