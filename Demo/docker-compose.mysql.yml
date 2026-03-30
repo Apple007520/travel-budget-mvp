@@ -1,0 +1,22 @@
+# 本地 MySQL 实例（数据库名 GJJ，用户 Applelady）
+# 启动：docker compose -f docker-compose.mysql.yml up -d
+# 停止：docker compose -f docker-compose.mysql.yml down
+# 连接：mysql -h 127.0.0.1 -P 3306 -u Applelady -p GJJ
+
+services:
+  mysql:
+    image: mysql:8.4
+    container_name: GJJ
+    restart: unless-stopped
+    env_file:
+      - .env.mysql
+    ports:
+      - "3306:3306"
+    volumes:
+      - gjj_mysql_data:/var/lib/mysql
+    command:
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_unicode_ci
+
+volumes:
+  gjj_mysql_data:

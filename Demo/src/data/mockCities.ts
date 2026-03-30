@@ -32,6 +32,10 @@ export interface CityDataFile {
     formatVersion?: number;
     source?: string;
     note?: string;
+    /** 定时任务尝试同步的时间（ISO），可选 */
+    lastSyncAttempt?: string;
+    /** 未拉取远程数据时的说明，可选 */
+    lastSyncSkippedReason?: string;
   };
   cities: Record<string, Attraction[]>;
 }

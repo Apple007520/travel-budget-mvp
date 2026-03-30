@@ -16,11 +16,11 @@ import { SharePoster } from "@/components/SharePoster";
 import {
   downloadPngBlob,
   posterNodeToPngBlob,
-  sharePngIfPossible,
   waitForStablePoster,
 } from "@/lib/sharePosterExport";
 
 const LODGING_PER_NIGHT = 300;
+const DEFAULT_PUBLIC_APP_URL = "https://travelbudget-demo.vercel.app";
 
 const DEFAULT_BUDGET_IDS = {
   lodging: "lodging",
@@ -80,23 +80,6 @@ function ShareDialogIconImage({ className }: { className?: string }) {
       <rect x="3" y="5" width="18" height="14" rx="2" />
       <circle cx="8.5" cy="10" r="1.75" />
       <path d="m21 15-5-5-4 4-2-2-4 4" />
-    </svg>
-  );
-}
-
-function ShareDialogIconSend({ className }: { className?: string }) {
-  return (
-    <svg
-      className={className}
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth={1.65}
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden
-    >
-      <path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7z" />
     </svg>
   );
 }
@@ -507,9 +490,19 @@ export function TravelBudgetPlanner() {
   const sharePosterRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    const fromEnv = (process.env.NEXT_PUBLIC_APP_URL || "").trim();
+    if (fromEnv) {
+      setSharePosterUrl(fromEnv);
+      return;
+    }
+
+    const origin =
+      typeof window !== "undefined" ? window.location.origin.trim() : "";
+    const isLocalhost =
+      /^https?:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/i.test(origin);
+
     setSharePosterUrl(
-      (process.env.NEXT_PUBLIC_APP_URL || "").trim() ||
-        (typeof window !== "undefined" ? window.location.origin : ""),
+      origin && !isLocalhost ? origin : DEFAULT_PUBLIC_APP_URL,
     );
   }, []);
 
@@ -540,24 +533,6 @@ export function TravelBudgetPlanner() {
       setSharePosterBusy(false);
     }
   }, [sharePosterFilename]);
-
-  const handleSharePosterShare = useCallback(async () => {
-    const el = sharePosterRef.current;
-    if (!el) return;
-    setSharePosterBusy(true);
-    try {
-      await waitForStablePoster();
-      const blob = await posterNodeToPngBlob(el);
-      const name = sharePosterFilename();
-      const result = await sharePngIfPossible(blob, name, {
-        title: `${city} 旅行预算海报`,
-        text: "用「旅行小算盘」一键规划行程与预算",
-      });
-      if (result === "unsupported") downloadPngBlob(blob, name);
-    } finally {
-      setSharePosterBusy(false);
-    }
-  }, [city, sharePosterFilename]);
 
   const itineraryKeys = useMemo(
     () => new Set(itinerary.map(attractionKey)),
@@ -1090,7 +1065,7 @@ export function TravelBudgetPlanner() {
 
       {!draftReady ? (
         <p className="rounded-xl border border-dashed border-zinc-300 bg-zinc-50/80 px-4 py-4 text-center text-sm text-zinc-600 dark:border-zinc-700 dark:bg-zinc-900/50 dark:text-zinc-400">
-          当前版本数据为本地静态库，门票价格为市场参考价，实际支出请以当地为准
+          门票价格为市场参考价，实际支出请以当地为准
         </p>
       ) : invalidDestination ? (
         <p className="rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-center text-sm text-amber-900 dark:border-amber-900 dark:bg-amber-950/40 dark:text-amber-200">
@@ -1558,16 +1533,6 @@ export function TravelBudgetPlanner() {
               >
                 <ShareDialogIconImage className="h-4 w-4 shrink-0" />
                 保存到相册
-              </button>
-              <button
-                type="button"
-                onClick={handleSharePosterShare}
-                disabled={sharePosterBusy}
-                aria-label="通过系统应用分享给好友"
-                className="inline-flex items-center justify-center gap-2 rounded-lg bg-teal-600 px-4 py-2.5 text-sm font-medium text-white shadow-md hover:bg-teal-700 disabled:opacity-50"
-              >
-                <ShareDialogIconSend className="h-4 w-4 shrink-0" />
-                分享给朋友
               </button>
             </div>
           </div>
