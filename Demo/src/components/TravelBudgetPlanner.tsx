@@ -496,28 +496,25 @@ export function TravelBudgetPlanner() {
       return;
     }
 
-    const origin = typeof window !== "undefined" ? window.location.origin.trim() : "";
-    const path = typeof window !== "undefined" ? window.location.pathname.trim() : "";
-    const isLocalhost =
-      /^https?:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/i.test(origin);
+    if (typeof window === "undefined") {
+      setSharePosterUrl(DEFAULT_PUBLIC_APP_URL);
+      return;
+    }
 
-    // GitHub Pages 通常部署在子路径：`https://<user>.github.io/<repo>/`
-    // 例如本项目：`/travel-budget-mvp/`
-    const basePathFromPathname = (() => {
-      if (!path || path === "/") return "";
-      const seg = path.split("/").filter(Boolean)[0];
-      return seg ? `/${seg}` : "";
-    })();
+    const href = window.location.href.trim();
+    const origin = window.location.origin.trim();
+    const isLocalhost = /^https?:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/i.test(origin);
 
-    const isGithubPages = /\.github\.io$/i.test(new URL(origin).hostname);
+    if (!href || isLocalhost) {
+      setSharePosterUrl(DEFAULT_PUBLIC_APP_URL);
+      return;
+    }
 
-    setSharePosterUrl(
-      origin && !isLocalhost
-        ? isGithubPages && basePathFromPathname
-          ? `${origin}${basePathFromPathname}/`
-          : origin
-        : DEFAULT_PUBLIC_APP_URL,
-    );
+    // 用完整 URL，确保 GitHub Pages 子路径（/travel-budget-mvp）不会丢失。
+    const current = new URL(href);
+    current.search = "";
+    current.hash = "";
+    setSharePosterUrl(current.toString());
   }, []);
 
   useEffect(() => {
