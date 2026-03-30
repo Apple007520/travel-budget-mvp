@@ -472,6 +472,7 @@ export function TravelBudgetPlanner() {
     createDefaultBudgetLines,
   );
   const [newCategoryName, setNewCategoryName] = useState("");
+  const [newCategoryAmount, setNewCategoryAmount] = useState("");
   const [showCustomCategoryEditor, setShowCustomCategoryEditor] =
     useState(false);
   const [customItineraryItems, setCustomItineraryItems] = useState<
@@ -897,12 +898,14 @@ export function TravelBudgetPlanner() {
 
   const addCustomCategory = () => {
     const name = newCategoryName.trim();
+    const amount = Math.max(0, Number(newCategoryAmount) || 0);
     if (!name) return;
     setBudgetLines((lines) => [
       ...lines,
-      { id: `custom-${Date.now()}`, name, amount: 0, removable: true },
+      { id: `custom-${Date.now()}`, name, amount, removable: true },
     ]);
     setNewCategoryName("");
+    setNewCategoryAmount("");
   };
 
   const removeCategory = (id: string) => {
@@ -1428,8 +1431,20 @@ export function TravelBudgetPlanner() {
                       value={newCategoryName}
                       onChange={(e) => setNewCategoryName(e.target.value)}
                       placeholder="输入分类名，如：购物、娱乐、纪念品…"
-                      className="flex-1 rounded-lg border border-zinc-300 bg-white px-3 py-2 text-sm outline-none ring-teal-500 focus:ring-2 dark:border-zinc-600 dark:bg-zinc-950"
+                      className="min-w-0 flex-1 rounded-lg border border-zinc-300 bg-white px-3 py-2 text-sm outline-none ring-teal-500 focus:ring-2 dark:border-zinc-600 dark:bg-zinc-950"
                     />
+                    <div className="flex items-center gap-2 sm:w-44">
+                      <span className="text-zinc-400">￥</span>
+                      <input
+                        type="number"
+                        min={0}
+                        step={1}
+                        value={newCategoryAmount}
+                        onChange={(e) => setNewCategoryAmount(e.target.value)}
+                        placeholder="费用"
+                        className="w-full rounded-lg border border-zinc-300 bg-white px-3 py-2 text-sm outline-none ring-teal-500 focus:ring-2 dark:border-zinc-600 dark:bg-zinc-950"
+                      />
+                    </div>
                     <div className="flex w-full flex-col gap-2 sm:w-auto sm:flex-row sm:items-center">
                       <button
                         type="button"
