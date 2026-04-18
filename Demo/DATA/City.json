@@ -530,6 +530,90 @@
         "priceNote": "按票档计价，以上为代表性参考价"
       }
     ],
+    "南宁": [
+      {
+        "name": "青秀山风景区",
+        "price": 20,
+        "priceFrom": 18,
+        "priceTo": 25,
+        "type": "paid",
+        "description": "城市绿肺与观景步道，适合半日到一日",
+        "priceAsOf": "2026-03",
+        "priceNote": "门票与园内观光车等另计，以官方购票页为准"
+      },
+      {
+        "name": "南湖公园（散步）",
+        "price": 0,
+        "type": "free",
+        "description": "湖景与城市休闲路线，适合傍晚慢游"
+      },
+      {
+        "name": "广西民族博物馆（参观）",
+        "price": 0,
+        "type": "free",
+        "description": "民族文化与展陈体验（多为预约制，建议提前查）"
+      },
+      {
+        "name": "三街两巷历史文化街区（散步）",
+        "price": 0,
+        "type": "free",
+        "description": "老城街巷与夜市氛围，适合逛吃拍照"
+      },
+      {
+        "name": "方特东盟神画（参考）",
+        "price": 280,
+        "priceFrom": 240,
+        "priceTo": 320,
+        "type": "paid",
+        "description": "大型主题乐园，适合亲子与周末",
+        "priceAsOf": "2026-03",
+        "priceNote": "按日历票/时段票计价，以购票页为准"
+      }
+    ],
+    "百色": [
+      {
+        "name": "通灵大峡谷（门票参考）",
+        "price": 115,
+        "priceFrom": 90,
+        "priceTo": 140,
+        "type": "paid",
+        "description": "峡谷瀑布与溶洞景观，适合一日游",
+        "priceAsOf": "2026-03",
+        "priceNote": "票价与联票/季节差异，以官方为准"
+      },
+      {
+        "name": "德天跨国瀑布（参考）",
+        "price": 110,
+        "priceFrom": 90,
+        "priceTo": 150,
+        "type": "paid",
+        "description": "中越边境瀑布奇观，建议预留一整天",
+        "priceAsOf": "2026-03",
+        "priceNote": "观光车/竹筏等项目另计，以售票页为准"
+      },
+      {
+        "name": "百色起义纪念园（参观）",
+        "price": 0,
+        "type": "free",
+        "description": "红色文化地标，适合研学与历史路线"
+      },
+      {
+        "name": "澄碧湖风景区（散步/观景）",
+        "price": 0,
+        "type": "free",
+        "description": "湖景休闲路线，适合放松慢游"
+      },
+      {
+        "name": "乐业天坑群（参考）",
+        "price": 90,
+        "priceFrom": 70,
+        "priceTo": 130,
+        "type": "paid",
+        "description": "喀斯特天坑地貌，适合自然与摄影路线",
+        "priceAsOf": "2026-03",
+        "priceNote": "不同景区/线路票价差异，以官方为准"
+      }
+    ],
     "天津": [
       {
         "name": "天津之眼摩天轮",
