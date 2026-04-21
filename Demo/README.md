@@ -46,6 +46,7 @@ npm run timer:start
 
 行为说明：
 - 每次调用会先停止已有 timer 进程，再重启（避免重复跑多份）。
+- 启动前会自动读取 `Demo/.env.timer`（若存在），无需手动 `export`。
 - 启动时会先执行一次 `npm run crawl`，然后再启动 `npm run timer` 常驻任务。
 - PID 文件：`.runtime/timer.pid`
 - 日志文件：`.runtime/logs/timer.log`
@@ -73,6 +74,13 @@ npm run timer:status
 - `CITY_DATA_SYNC_URL`：必须配置，指向可访问的 JSON 数据源（与 `DATA/City.json` 同结构）。
 - `CRON_TZ`：可选，定时任务时区（默认 `Asia/Shanghai`）。
 - `RUN_CRAWL_ON_START`：可选，`npm run timer` 单独运行时是否启动后立刻拉取一次（`timer:start` 已内置先拉取，通常不必再设）。
+
+建议把定时任务环境变量写在 `Demo/.env.timer`，例如：
+
+```bash
+CITY_DATA_SYNC_URL="https://your-domain.com/city.json"
+# CRON_TZ="Asia/Shanghai"
+```
 
 可选环境变量：部署生产时设置 `NEXT_PUBLIC_APP_URL`（例如 `https://your-domain.com`），分享海报上的二维码将指向该地址；未设置时使用当前访问的 `origin`（本地开发为 `http://localhost:3015`）。
 

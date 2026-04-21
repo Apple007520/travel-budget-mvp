@@ -6,6 +6,7 @@ PID_DIR="$PROJECT_DIR/.runtime"
 PID_FILE="$PID_DIR/timer.pid"
 LOG_DIR="$PROJECT_DIR/.runtime/logs"
 LOG_FILE="$LOG_DIR/timer.log"
+ENV_FILE="$PROJECT_DIR/.env.timer"
 
 mkdir -p "$PID_DIR" "$LOG_DIR"
 
@@ -17,6 +18,17 @@ cd "$PROJECT_DIR"
 if ! command -v npm >/dev/null 2>&1; then
   echo "Error: npm is not installed."
   exit 1
+fi
+
+if [[ -f "$ENV_FILE" ]]; then
+  # Auto-load timer env vars (e.g. CITY_DATA_SYNC_URL / CRON_TZ).
+  set -a
+  # shellcheck disable=SC1090
+  source "$ENV_FILE"
+  set +a
+  echo "==> Loaded env from $ENV_FILE"
+else
+  echo "==> Env file not found, skip: $ENV_FILE"
 fi
 
 echo "==> Running one-time sync before scheduler..."

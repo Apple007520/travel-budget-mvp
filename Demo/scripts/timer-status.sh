@@ -4,8 +4,15 @@ set -euo pipefail
 PROJECT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 PID_FILE="$PROJECT_DIR/.runtime/timer.pid"
 LOG_FILE="$PROJECT_DIR/.runtime/logs/timer.log"
+ENV_FILE="$PROJECT_DIR/.env.timer"
 
 echo "Timer status:"
+
+if [[ -f "$ENV_FILE" ]]; then
+  echo "  env_file: found ($ENV_FILE)"
+else
+  echo "  env_file: missing ($ENV_FILE)"
+fi
 
 if [[ -f "$PID_FILE" ]]; then
   PID="$(cat "$PID_FILE")"
