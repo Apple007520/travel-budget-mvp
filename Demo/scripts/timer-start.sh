@@ -1,0 +1,39 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+PROJECT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+PID_DIR="$PROJECT_DIR/.runtime"
+PID_FILE="$PID_DIR/timer.pid"
+LOG_DIR="$PROJECT_DIR/.runtime/logs"
+LOG_FILE="$LOG_DIR/timer.log"
+
+mkdir -p "$PID_DIR" "$LOG_DIR"
+
+# Always restart: stop existing timer process first.
+"$PROJECT_DIR/scripts/timer-stop.sh" >/dev/null 2>&1 || true
+
+cd "$PROJECT_DIR"
+
+if ! command -v npm >/dev/null 2>&1; then
+  echo "Error: npm is not installed."
+  exit 1
+fi
+
+echo "==> Running one-time sync before scheduler..."
+npm run crawl
+
+echo "==> Starting timer daemon..."
+nohup npm run timer >"$LOG_FILE" 2>&1 &
+NEW_PID=$!
+echo "$NEW_PID" >"$PID_FILE"
+
+sleep 1
+if kill -0 "$NEW_PID" >/dev/null 2>&1; then
+  echo "Timer started successfully."
+  echo "PID: $NEW_PID"
+  echo "Log: $LOG_FILE"
+else
+  echo "Failed to start timer. Check log:"
+  echo "$LOG_FILE"
+  exit 1
+fi

@@ -34,6 +34,46 @@ npm run dev:stop
 
 启动后在浏览器访问 [http://localhost:3015](http://localhost:3015)。
 
+## 景点门票定时任务（一键启动）
+
+已提供定时任务一键启动/停止脚本，用于「先拉取一次数据 + 常驻调度」：
+
+### 1) 启动定时任务（先拉取，再常驻）
+
+```bash
+npm run timer:start
+```
+
+行为说明：
+- 每次调用会先停止已有 timer 进程，再重启（避免重复跑多份）。
+- 启动时会先执行一次 `npm run crawl`，然后再启动 `npm run timer` 常驻任务。
+- PID 文件：`.runtime/timer.pid`
+- 日志文件：`.runtime/logs/timer.log`
+
+### 2) 停止定时任务
+
+```bash
+npm run timer:stop
+```
+
+### 3) 查看定时任务状态
+
+```bash
+npm run timer:status
+```
+
+输出内容包括：
+- 是否在运行（含 pid 文件是否陈旧）
+- 当前 pid（若在运行）
+- 日志文件路径
+- 最近 20 行日志
+
+### 4) 关键环境变量
+
+- `CITY_DATA_SYNC_URL`：必须配置，指向可访问的 JSON 数据源（与 `DATA/City.json` 同结构）。
+- `CRON_TZ`：可选，定时任务时区（默认 `Asia/Shanghai`）。
+- `RUN_CRAWL_ON_START`：可选，`npm run timer` 单独运行时是否启动后立刻拉取一次（`timer:start` 已内置先拉取，通常不必再设）。
+
 可选环境变量：部署生产时设置 `NEXT_PUBLIC_APP_URL`（例如 `https://your-domain.com`），分享海报上的二维码将指向该地址；未设置时使用当前访问的 `origin`（本地开发为 `http://localhost:3015`）。
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
