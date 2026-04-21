@@ -5,6 +5,7 @@ import {
   attractionTicketBadgeText,
   attractionTicketFootnote,
   CITY_DATA,
+  CITY_DATA_GENERATED_AT,
   type Attraction,
 } from "@/data/mockCities";
 import {
@@ -166,6 +167,18 @@ function attractionKey(a: Attraction): string {
 
 function formatYuan(n: number): string {
   return `￥${Number.isFinite(n) ? Math.round(n) : 0}`;
+}
+
+function formatDataSyncTime(iso?: string): string {
+  if (!iso) return "未知";
+  const d = new Date(iso);
+  if (Number.isNaN(d.getTime())) return iso;
+  const y = d.getFullYear();
+  const m = String(d.getMonth() + 1).padStart(2, "0");
+  const day = String(d.getDate()).padStart(2, "0");
+  const hh = String(d.getHours()).padStart(2, "0");
+  const mm = String(d.getMinutes()).padStart(2, "0");
+  return `${y}-${m}-${day} ${hh}:${mm}`;
 }
 
 /** 示例：￥3,580 */
@@ -1125,6 +1138,9 @@ export function TravelBudgetPlanner() {
                 )
               }
             />
+            <p className="mb-3 text-xs text-zinc-500 dark:text-zinc-400">
+              数据同步时间：{formatDataSyncTime(CITY_DATA_GENERATED_AT)}
+            </p>
             {noBuiltinAttractions ? (
               <div className="rounded-2xl border border-dashed border-teal-200 bg-teal-50/50 px-4 py-6 text-center dark:border-teal-900 dark:bg-teal-950/20">
                 <p className="text-sm leading-relaxed text-teal-900 dark:text-teal-100">

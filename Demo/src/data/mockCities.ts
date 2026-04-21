@@ -74,6 +74,11 @@ export const CITY_DATA: Record<string, Attraction[]> = (
   cityDataBundle as CityDataFile
 ).cities;
 
+/** DATA/City.json 的最近生成时间（ISO），用于页面展示同步时间 */
+export const CITY_DATA_GENERATED_AT: string | undefined = (
+  cityDataBundle as CityDataFile
+)._meta?.generatedAt;
+
 export const CITY_NAMES = Object.keys(CITY_DATA).sort((a, b) =>
   a.localeCompare(b, "zh-CN"),
 );
